@@ -1,4 +1,23 @@
 <resources>
-    <string name="app_name"><b><big>EhopperProject_AD340</big> \nby Elizabeth Hopper</b>
-        \n\nI was born in Vegas \nI was homeschooled. \nMy main hobbies are Zouk and lifting.</string>
+    <string name="app_name">EH</string>
+    <string name="text_input">Username</string>
+    <string name="login">Login</string>
+    <string name="button1_name">Cat</string>
+    <string name="button2_name">Pig</string>
+    <string name="button3_name">Bird</string>
+    <string name="button4_name">Dog</string>
+    <string name="button5_name">Owl</string>
+    <string name="button6_name">Cow</string>
+    <string name="button7_name">Mouse</string>
+    <string name="button8_name">Tiger</string>
+    <string name="button9_name">Snake</string>
+    <string name="button1_toast">Meow</string>
+    <string name="button2_toast">Oink</string>
+    <string name="button3_toast">Chirp</string>
+    <string name="button4_toast">Bark</string>
+    <string name="button5_toast">Hoot Hoot</string>
+    <string name="button6_toast">Moo</string>
+    <string name="button7_toast">Squeak</string>
+    <string name="button8_toast">Growl</string>
+    <string name="button9_toast">Hiss</string>
 </resources>
