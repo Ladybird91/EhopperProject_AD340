@@ -8,6 +8,7 @@
     android:backgroundTintMode="add"
     android:clickable="true"
     android:fadingEdge="none"
+    android:focusable="auto"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="-3dp"
     tools:layout_editor_absoluteY="1dp">
@@ -51,7 +52,7 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button1_name"
+        android:text="@string/movies"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"

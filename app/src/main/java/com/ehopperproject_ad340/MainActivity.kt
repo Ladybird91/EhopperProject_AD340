@@ -1,5 +1,6 @@
 package com.ehopperproject_ad340
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,7 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 
 
-class MainActivity : AppCompatActivity(), View.OnClickListener{
+class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,11 +31,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         btn7.setOnClickListener(this)
         btn8.setOnClickListener(this)
         btn9.setOnClickListener(this)
+
     }
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.button1 -> Toast.makeText(applicationContext, R.string.button1_toast, Toast.LENGTH_SHORT).show()
+            R.id.button1 -> startActivity(Intent(this, Movies::class.java))
             R.id.button2 -> Toast.makeText(applicationContext, R.string.button2_toast, Toast.LENGTH_SHORT).show()
             R.id.button3 -> Toast.makeText(applicationContext, R.string.button3_toast, Toast.LENGTH_SHORT).show()
             R.id.button4 -> Toast.makeText(applicationContext, R.string.button4_toast, Toast.LENGTH_SHORT).show()

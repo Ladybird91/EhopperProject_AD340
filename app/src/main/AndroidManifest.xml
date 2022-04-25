@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EhopperProject_AD340">
         <activity
+            android:name=".MovieDetails"
+            android:label="@string/movieDetails"
+            android:exported="false"
+            android:parentActivityName=".Movies"/>
+        <activity
+            android:name=".Movies"
+            android:exported="false"
+            android:label="@string/movies"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
