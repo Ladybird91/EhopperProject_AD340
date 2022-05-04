@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+
 class MovieAdapter(private val movies : ArrayList<MovieInfo>, private val moviesInterface: MoviesInterface) : RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieAdapter.MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_row, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_row, parent, false)
         return MyViewHolder(view)
     }
 
@@ -45,4 +46,7 @@ class MovieAdapter(private val movies : ArrayList<MovieInfo>, private val movies
             }
         }
     }
+
+
 }
+

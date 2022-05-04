@@ -3,8 +3,9 @@
     <string name="text_input">Username</string>
     <string name="login">Login</string>
     <string name="movieDetails">Movie Details</string>
-    <string name="movies">Movies</string>
-    <string name="button2_name">Pig</string>
+    <string name="cameraDetails">Seattle Traffic Cameras</string>
+    <string name="button1_name">Movies</string>
+    <string name="button2_name">Live Cameras</string>
     <string name="button3_name">Bird</string>
     <string name="button4_name">Dog</string>
     <string name="button5_name">Owl</string>

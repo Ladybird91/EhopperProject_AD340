@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ehopperproject_ad340">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,14 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EhopperProject_AD340">
         <activity
-            android:name=".MovieDetails"
-            android:label="@string/movieDetails"
+            android:name=".LiveCameras"
+            android:label="@string/cameraDetails"
             android:exported="false"
-            android:parentActivityName=".Movies"/>
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MovieDetails"
+            android:exported="false"
+            android:label="@string/movieDetails"
+            android:parentActivityName=".Movies" />
         <activity
             android:name=".Movies"
             android:exported="false"
-            android:label="@string/movies"
+            android:label="@string/button1_name"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"

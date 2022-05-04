@@ -2,7 +2,6 @@ package com.ehopperproject_ad340
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,9 +12,9 @@ class Movies : AppCompatActivity(), MoviesInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movies)
+        setContentView(R.layout.recycler_view_layout)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.movieView)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler)
         setUpMovies()
 
         val adapter = MovieAdapter(moviesCollection, this)

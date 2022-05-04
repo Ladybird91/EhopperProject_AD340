@@ -7,10 +7,16 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/ic_baseline_movie_24.xml" value="0.173" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1365" />
+        <entry key="app/src/main/res/layout/activity_live_cameras.xml" value="0.14959202175883954" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_movies.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/movie_row.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/live_cam_row.xml" value="0.16545784224841342" />
+        <entry key="app/src/main/res/layout/movie_row.xml" value="0.2803009033203125" />
+        <entry key="app/src/main/res/layout/recyclerViewLayout.xml" value="0.24155622060709706" />
+        <entry key="app/src/main/res/layout/recycler_cameras.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recycler_row.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recycler_view_layout.xml" value="0.1731509191962377" />
         <entry key="app/src/main/res/layout/ui_layouts.xml" value="0.10925925925925926" />
       </map>
     </option>
