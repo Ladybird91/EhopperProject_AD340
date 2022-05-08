@@ -22,7 +22,7 @@ private val retrofit = Retrofit.Builder()
 
 interface CamApiService {
     @GET("Travelers/api/Map/Data?zoomId=13&type=2")
-    fun getProperties(): Call<GetList>
+    fun getProperties(): Call<CallResponse>
 }
 
 object CamApi {
