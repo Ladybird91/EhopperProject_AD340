@@ -5,9 +5,10 @@
     <string name="connectError">Not connected to network</string>
     <string name="movieDetails">Movie Details</string>
     <string name="cameraDetails">Seattle Traffic Cameras</string>
+    <string name="title_activity_maps">Camera Locations</string>
     <string name="button1_name">Movies</string>
     <string name="button2_name">Live Cameras</string>
-    <string name="button3_name">Bird</string>
+    <string name="button3_name">Locations</string>
     <string name="button4_name">Dog</string>
     <string name="button5_name">Owl</string>
     <string name="button6_name">Cow</string>
@@ -23,4 +24,6 @@
     <string name="button7_toast">Squeak</string>
     <string name="button8_toast">Growl</string>
     <string name="button9_toast">Hiss</string>
+    <string name="title_activity_maps2">MapsActivity2</string>
+    <string name="api_key">AIzaSyBv6ADX8zTjiuOFFH-3eObx7DfWZMOkz5o</string>
 </resources>

@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1365" />
         <entry key="app/src/main/res/layout/activity_live_cameras.xml" value="0.14959202175883954" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.19265639165911153" />
         <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_movies.xml" value="0.1" />
         <entry key="app/src/main/res/layout/live_cam_row.xml" value="0.16545784224841342" />

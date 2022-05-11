@@ -17,11 +17,9 @@ import retrofit2.Response
 
 class LiveCameras : AppCompatActivity() {
 
-
-
     var recyclerView: RecyclerView? = null
     var adapter = CameraAdapter()
-    private var TAG = "LiveCameras"
+    private var tag = "LiveCameras"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +38,12 @@ class LiveCameras : AppCompatActivity() {
                 getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
             connectivityManager.registerDefaultNetworkCallback(object : NetworkCallback() {
                 override fun onAvailable(network: Network) {
-                    //Log.e(TAG, "Connected")
+                    //Log.e(tag, "Connected")
                     val call: Call<CallResponse> = CamApi.retrofitService.getProperties()
                     call.enqueue(object : Callback<CallResponse> {
                         override
                         fun onResponse(call: Call<CallResponse>, response: Response<CallResponse>) {
-                            //Log.e(TAG, "Call started")
+                            //Log.e(tag, "Call started")
                             val data = response.body()?.Features
                             val allCameras = mutableListOf<CameraDetails>()
                             for (i in data!!.indices) {
@@ -54,11 +52,10 @@ class LiveCameras : AppCompatActivity() {
                             }
                             recyclerView?.adapter = adapter
                             adapter.setData(allCameras)
-
                         }
                         override
                         fun onFailure(call: Call<CallResponse>, t: Throwable) {
-                            //Log.e(TAG, "Call not started")
+                            //Log.e(tag, "Call not started")
                             Toast.makeText(
                                 applicationContext,
                                 "Something went wrong...Please try later!",
@@ -68,12 +65,12 @@ class LiveCameras : AppCompatActivity() {
                     })
                 }
                 override fun onLost(network: Network) {
-                    //Log.e(TAG, "Not connected")
+                    //Log.e(tag, "Not connected")
                     Toast.makeText(applicationContext, R.string.connectError, Toast.LENGTH_LONG).show()
                 }
             })
         } catch (e: Exception) {
-            Log.e(TAG, e.toString())
+            Log.e(tag, e.toString())
         }
     }
 }

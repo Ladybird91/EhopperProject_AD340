@@ -4,11 +4,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class MovieInfo {
 
-    private String title;
-    private String year;
-    private String director;
-    private String image;
-    private String description;
+    private final String title;
+    private final String year;
+    private final String director;
+    private final String image;
+    private final String description;
 
 
     public MovieInfo(String title, String year, String director, String image, String description) {

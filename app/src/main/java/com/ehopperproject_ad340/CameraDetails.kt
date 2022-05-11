@@ -1,5 +1,6 @@
 package com.ehopperproject_ad340
 
+
 data class CameraDetails(
     val Id: String,
     val Description: String,
@@ -22,8 +23,15 @@ data class CallResponse(
 )
 
 data class Features(
-    val Cameras: List<CameraDetails>
+    val Cameras: List<CameraDetails>,
+    val PointCoordinate: DoubleArray
 )
+
+
+
+
+
+
 
 
 
