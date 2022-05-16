@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MovieDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movie_details)
+        setContentView(R.layout.movie_details)
 
         val movieTitle = findViewById<TextView>(R.id.movieDetTitle)
         val movieDirector = findViewById<TextView>(R.id.movieDirector)

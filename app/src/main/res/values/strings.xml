@@ -2,10 +2,18 @@
     <string name="app_name">EH</string>
     <string name="text_input">Username</string>
     <string name="login">Login</string>
-    <string name="connectError">Not connected to network</string>
+
     <string name="movieDetails">Movie Details</string>
+    <string name="year">Year</string>
+    <string name="title">Title</string>
+    <string name="director">Director</string>
+    <string name="description">Description</string>
+
     <string name="cameraDetails">Seattle Traffic Cameras</string>
     <string name="title_activity_maps">Camera Locations</string>
+    <string name="street">Street</string>
+    <string name="title_activity_maps2">MapsActivity2</string>
+
     <string name="button1_name">Movies</string>
     <string name="button2_name">Live Cameras</string>
     <string name="button3_name">Locations</string>
@@ -24,6 +32,8 @@
     <string name="button7_toast">Squeak</string>
     <string name="button8_toast">Growl</string>
     <string name="button9_toast">Hiss</string>
-    <string name="title_activity_maps2">MapsActivity2</string>
+
     <string name="api_key">AIzaSyBv6ADX8zTjiuOFFH-3eObx7DfWZMOkz5o</string>
+    <string name="connectError">Unable to connect to network</string>
+    <string name="apiError">Unable to load live camera information</string>
 </resources>

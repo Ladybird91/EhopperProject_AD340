@@ -12,7 +12,7 @@ class Movies : AppCompatActivity(), MoviesInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recycler_view_layout)
+        setContentView(R.layout.recycler_view)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler)
         setUpMovies()

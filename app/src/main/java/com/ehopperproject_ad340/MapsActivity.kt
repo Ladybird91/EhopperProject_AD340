@@ -5,11 +5,8 @@ import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
-import android.net.ConnectivityManager
-import android.net.Network
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -22,9 +19,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -37,18 +31,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private val zoomLevel = 12.0f
     private var lastKnownLocation: Location? = null
     private val permissionRequest = 1
-    val allCameras = mutableListOf<CameraDetails>()
-    val allCoordinates = ArrayList<LatLng>()
+    var cameraList = ArrayList<CameraDetails>()
+    var coordinatesList = ArrayList<LatLng>()
     private var tag = "<MapActivity>"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_maps)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        registerNetworkCallback()
-
+        val bundle = intent.extras
+        cameraList = bundle?.getParcelableArrayList<CameraDetails>("cameras") as ArrayList<CameraDetails>
+        coordinatesList = bundle.getParcelableArrayList<LatLng>("coordinates") as ArrayList<LatLng>
 
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -59,10 +54,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         getLocationPermission()
-        updateLocationUI()
         getDeviceLocation()
-
-
+        setMarkers()
     }
 
     @SuppressLint("MissingPermission")
@@ -122,76 +115,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
-        updateLocationUI()
-    }
-
-    @SuppressLint("MissingPermission")
-    private fun updateLocationUI() {
-        try {
-            if (locationPermissionGranted) {
-                Log.e(tag, "updateLocationUI granted")
-                mMap.isMyLocationEnabled = true
-                mMap.uiSettings.isMyLocationButtonEnabled = true
-            } else {
-                Log.e(tag, "updateLocationUI not granted")
-                mMap.isMyLocationEnabled = false
-                mMap.uiSettings.isMyLocationButtonEnabled = false
-                lastKnownLocation = null
-                getLocationPermission()
-            }
-        } catch (e: SecurityException) {
-            Log.e("Exception: %s", e.message, e)
-        }
-    }
-
-
-
-
-    private fun registerNetworkCallback() {
-        try {
-            val connectivityManager =
-                getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
-            connectivityManager.registerDefaultNetworkCallback(object : ConnectivityManager.NetworkCallback() {
-                override fun onAvailable(network: Network) {
-                    Log.e(tag, "Connected")
-                    val call: Call<CallResponse> = CamApi.retrofitService.getProperties()
-                    call.enqueue(object : Callback<CallResponse> {
-                        override
-                        fun onResponse(call: Call<CallResponse>, response: Response<CallResponse>) {
-                            Log.e(tag, "Call started")
-                            val data = response.body()?.Features
-                            for (i in data!!.indices) {
-                                val coordinates = data[i].PointCoordinate
-                                val item = data[i].Cameras
-                                allCameras.addAll(item)
-                                allCoordinates.add(LatLng(coordinates[0], coordinates[1]))
-                            }
-                            setMarkers()
-                        }
-                        override
-                        fun onFailure(call: Call<CallResponse>, t: Throwable) {
-                            Log.e(tag, "Call not started")
-                            Toast.makeText(
-                                applicationContext,
-                                "Something went wrong...Please try later!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    })
-                }
-                override fun onLost(network: Network) {
-                    Log.e(tag, "Not connected")
-                    Toast.makeText(applicationContext, R.string.connectError, Toast.LENGTH_LONG).show()
-                }
-            })
-        } catch (e: Exception) {
-            Log.e(tag, e.toString())
-        }
     }
 
     private fun setMarkers() {
-        for (i in 0 until allCoordinates.size) {
-            mMap.addMarker(MarkerOptions().position(allCoordinates[i]).title(allCameras[i].Description))
+        for (i in 0 until coordinatesList.size) {
+            mMap.addMarker(MarkerOptions().position(coordinatesList[i]).title(cameraList[i].Description))
         }
     }
 }

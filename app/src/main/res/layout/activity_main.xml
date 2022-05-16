@@ -8,7 +8,7 @@
     android:backgroundTintMode="add"
     android:clickable="true"
     android:fadingEdge="none"
-    android:focusable="auto"
+    android:focusable="true"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="-3dp"
     tools:layout_editor_absoluteY="1dp">

@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 
-
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +36,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.button1 -> startActivity(Intent(this, Movies::class.java))
-            R.id.button2 -> startActivity(Intent(this, LiveCameras::class.java))
-            R.id.button3 -> startActivity(Intent(this, MapsActivity::class.java))
+            R.id.button2 -> LiveCameraInfo.getLiveCameraInfo(this,LiveCameras::class.java)
+            R.id.button3 -> LiveCameraInfo.getLiveCameraInfo(this, MapsActivity::class.java)
             R.id.button4 -> Toast.makeText(applicationContext, R.string.button4_toast, Toast.LENGTH_SHORT).show()
             R.id.button5 -> Toast.makeText(applicationContext, R.string.button5_toast, Toast.LENGTH_SHORT).show()
             R.id.button6 -> Toast.makeText(applicationContext, R.string.button6_toast, Toast.LENGTH_SHORT).show()

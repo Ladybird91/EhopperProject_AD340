@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-
 private const val BASE_URL =
     "https://web6.seattle.gov/"
 
@@ -22,7 +21,7 @@ private val retrofit = Retrofit.Builder()
 
 interface CamApiService {
     @GET("Travelers/api/Map/Data?zoomId=13&type=2")
-    fun getProperties(): Call<CallResponse>
+    fun getProperties(): Call<LiveCameraInfo>
 }
 
 object CamApi {
@@ -30,6 +29,4 @@ object CamApi {
         retrofit.create(CamApiService::class.java)
     }
 }
-
-
 

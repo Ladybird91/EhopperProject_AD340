@@ -1,6 +1,5 @@
 package com.ehopperproject_ad340
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ class CameraAdapter : RecyclerView.Adapter<CameraAdapter.MyViewHolder>() {
     private var cameraList : List<CameraDetails>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.live_cam_row, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_cam_row, parent, false)
         return MyViewHolder(view)
     }
 
