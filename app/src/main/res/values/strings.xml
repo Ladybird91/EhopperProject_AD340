@@ -33,7 +33,6 @@
     <string name="button8_toast">Growl</string>
     <string name="button9_toast">Hiss</string>
 
-    <string name="api_key">AIzaSyBv6ADX8zTjiuOFFH-3eObx7DfWZMOkz5o</string>
     <string name="connectError">Unable to connect to network</string>
     <string name="apiError">Unable to load live camera information</string>
 </resources>
