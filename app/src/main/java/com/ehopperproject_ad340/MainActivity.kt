@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         displayname.setText(getPreference(DISPLAYNAME))
         email.setText(getPreference(EMAIL))
         password.setText(getPreference(PASSWORD))
-        // uGUPkSGyw5Hy7jnK
     }
 
     override fun onClick(view: View) {
