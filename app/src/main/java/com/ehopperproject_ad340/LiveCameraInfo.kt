@@ -1,5 +1,6 @@
 package com.ehopperproject_ad340
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -7,9 +8,11 @@ import android.net.Network
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.parcelize.Parcelize
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,6 +24,7 @@ data class LiveCameraInfo(
 ) {
     companion object {
         private var tag = "LiveCameraInfo"
+        @SuppressLint("MissingPermission")
         fun getLiveCameraInfo(context: Context, classToStart : Class<*>){
             try {
                 val connectivityManager =
@@ -60,7 +64,8 @@ data class LiveCameraInfo(
                         Log.e(tag, "No connection to network.")
                         Toast.makeText(context.applicationContext, R.string.connectError, Toast.LENGTH_LONG).show()
                         // Try to figure out out to implement correctly later
-                        // Snackbar.make(view, R.string.connectError, Snackbar.LENGTH_INDEFINITE).show()
+
+                        //Snackbar.make(view.findViewById(android.R.id.content), R.string.connectError, Snackbar.LENGTH_INDEFINITE).show()
                     }
                 })
             } catch (e: Exception) {

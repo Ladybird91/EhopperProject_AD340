@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">EH</string>
-    <string name="text_input">Username</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
     <string name="login">Login</string>
 
     <string name="movieDetails">Movie Details</string>
@@ -13,6 +15,8 @@
     <string name="title_activity_maps">Camera Locations</string>
     <string name="street">Street</string>
     <string name="title_activity_maps2">MapsActivity2</string>
+
+    <string name="title_firebase_activity">Firebase User Data</string>
 
     <string name="button1_name">Movies</string>
     <string name="button2_name">Live Cameras</string>
